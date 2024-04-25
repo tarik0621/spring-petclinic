@@ -22,7 +22,7 @@ pipeline{
               }
           }
       }
-       stage('build stage'){
+       stage('docker build stage'){
             steps{
                sh '''
                    docker build -t tarikahmad0621539/springpetclinic:1.1
