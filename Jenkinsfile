@@ -25,8 +25,8 @@ pipeline{
        stage('docker build stage'){
             steps{
              sh '''
-                   docker build -t tarikahmad0621539/springpetclinic:1.1 .
-                   docker run -d --name spc -p 8080:8080 tarikahmad0621539/springpetclinic:1.1
+                   sudo docker build -t tarikahmad0621539/springpetclinic:1.1 .
+                   sudo docker run -d --name spc -p 8080:8080 tarikahmad0621539/springpetclinic:1.1
                 '''
             }
         }
