@@ -15,11 +15,13 @@ pipeline{
                sh 'mvn clean package'
             }
         }
-        // stage('git checkout'){
-        //     steps{
-        //         git branch: 'main', url: 'https://github.com/tarik0621/spring-petclinic.git'
-        //     }
-        // }
+         stage("SonarQube analysis") {
+          node {
+              withSonarQubeEnv('sonar-server', credentialsId: 'sonarid') {
+                 sh 'mvn sonar:sonar'
+              }
+          }
+      }
     }
 }
 
